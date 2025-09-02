@@ -1,0 +1,6 @@
+**/__pycache__
+**/df
+**/1000_videos
+**/Models
+my_deepfake_detector.h5
+my_deepfake_detector.keras
