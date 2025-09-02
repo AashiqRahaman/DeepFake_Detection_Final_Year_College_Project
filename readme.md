@@ -97,10 +97,6 @@ python main.py --train "C:\Users\aashiq\Desktop\Git\MY_Git_Hub_AashiqRahaman\Dee
 ```
 ## Train will be looks like that...
 ```
->>                --val "C:\Users\aashiq\Desktop\Git\MY_Git_Hub_AashiqRahaman\DeepFake_Detection_College_Project\Assets\1000_videos\validation" `
->>                --epochs 20 `
->>                --batch 32 `
->>                --steps 100
 2025-08-31 20:28:41.265771: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 2025-08-31 20:28:45.369120: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 Configuration
