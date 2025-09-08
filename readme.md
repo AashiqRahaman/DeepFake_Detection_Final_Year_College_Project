@@ -18,7 +18,7 @@ You need Python3.X and conda package manager to run this tool
 The follwing steps can be used to install the required packages :
 1. Clone the repository 
 ```bash
-git clone https://github.com/tre3x/Deepfake-Video-Forgery-Detection.git
+git clone https://github.com/AashiqRahaman/DeepFake_Detection_Final_Year_College_Project
 ```
 2. Inialize a conda environment with neccessary packages 
 ```bash
