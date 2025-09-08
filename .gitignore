@@ -3,5 +3,11 @@
 **/1000_videos
 **/Models
 **/Trush
-my_deepfake_detector.h5
-my_deepfake_detector.keras
+# ML project files
+*.pkl
+*.h5
+*.ckpt
+*.sh
+*conda*.sh
+datasets/
+logs/
