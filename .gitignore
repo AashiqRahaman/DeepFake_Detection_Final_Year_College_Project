@@ -3,6 +3,7 @@
 **/1000_videos
 **/Models
 **/Trush
+**/test
 # ML project files
 *.pkl
 *.h5

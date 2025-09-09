@@ -41,6 +41,7 @@ def predict_single_image(model, image_path, labels):
     if image_data is None:
         return "Error", 0.0
     
+    # The model.predict() method is now available
     prediction = model.predict(image_data)
     confidence = np.max(prediction)
     predicted_label_index = np.argmax(prediction)
@@ -95,7 +96,7 @@ def predict_folder(model, folder_path, labels):
 
 def main():
     parser = argparse.ArgumentParser(description='Deep Fake Detection Prediction Script')
-    parser.add_argument('--model', type=str, required=True, help='Path to the trained model file (.h5)')
+    parser.add_argument('--model', type=str, required=True, help='Path to the trained model file (.h5 or SavedModel folder)')
     parser.add_argument('--image', type=str, help='Path to a single image for prediction')
     parser.add_argument('--folder', type=str, help='Path to a folder of images for batch prediction and accuracy calculation')
 
@@ -103,11 +104,11 @@ def main():
     
     # Check if a model path is provided
     if not os.path.exists(args.model):
-        print(f"Error: Model file not found at {args.model}")
+        print(f"Error: Model file or directory not found at {args.model}")
         return
 
     # Load the model with custom objects
-    # This is crucial because your model uses custom Keras Layers (Attention, etc.)
+    # tf.keras.models.load_model can now handle both .h5 files and SavedModel folders.
     try:
         print("Loading the model...")
         model = load_model(args.model, custom_objects={'Attention': Attention, 'MainBranch': MainBranch, 'ModifiedBranch': ModifiedBranch})
@@ -147,4 +148,18 @@ if __name__ == '__main__':
 
 
 
-# python predict.py --model models/best_model.h5 --image Assets/1000_videos/test/fake/067_025_1.png
+
+# python predict.py --model Models --folder Assets/1000_videos/test
+
+# [1195/1200] Image: 128_6.png -> Prediction: real (Confidence: 0.53) | Ground Truth: real | Result: Correct
+# [1196/1200] Image: 128_7.png -> Prediction: real (Confidence: 0.52) | Ground Truth: real | Result: Correct
+# [1197/1200] Image: 128_8.png -> Prediction: real (Confidence: 0.53) | Ground Truth: real | Result: Correct
+# [1198/1200] Image: 128_9.png -> Prediction: fake (Confidence: 0.54) | Ground Truth: real | Result: Incorrect
+# [1199/1200] Image: 129_0.png -> Prediction: real (Confidence: 0.61) | Ground Truth: real | Result: Correct
+# [1200/1200] Image: 129_1.png -> Prediction: real (Confidence: 0.75) | Ground Truth: real | Result: Correct
+
+# -----------------------------------------------------
+# Prediction complete. Total Images: 1200
+# Correct Predictions: 1150
+# Overall Accuracy: 95.83%
+# -----------------------------------------------------
