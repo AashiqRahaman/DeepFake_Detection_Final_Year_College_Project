@@ -2,19 +2,46 @@
 ---
 
 run (from project root)
-
-test whole folder (expects fake/ and real/ inside the folder):
 ```bash
-python Testing/test.py --model Models/my_deepfake_detector.keras --test Assets/1000_videos/test
+pip install tensorflow
+pip install opencv-python
+pip install numpy
+```
+` cd Testing_kaggle `
+`
+python predict.py --image "../Assets/1000_videos/test/fake/067_025_1.png"
+
+python predict.py --image "../Assets/1000_videos/test/fake/067_025_1.png" --model_path "models/best_model.keras"
+
+python predict.py --image "../Assets/1000_videos/test/real/067_16.png" --model_path "models/best_model.keras"
+
+python predict.py --image "../Assets/1000_videos/train/fake/128_896_3.png" --model_path "models/best_model.keras"
+python predict.py --image "../Assets/1000_videos/train/fake/128_896_3.png" --model_path "models/best_model.keras"
+python predict.py --image "../Assets/1000_videos/train/fake/128_896_3.png" --model_path "models/best_model.keras"
+
+
+python predict.py --image "../Assets/1000_videos/train/real/129_3.png" --model_path "models/best_model.keras"
+python predict.py --image "../Assets/1000_videos/train/real/132_4.png" --model_path "models/best_model.keras"
+python predict.py --image "../Assets/1000_videos/train/real/133_5.png" --model_path "models/best_model.keras"
+
+
+```bash
+pip uninstall tensorflow
+pip uninstall opencv-python
+pip uninstall numpy
 ```
 
-Example output:
-```bash
-img1.png → Predicted: fake, Prob: {'fake': 0.92, 'real': 0.08}
-img2.png → Predicted: real, Prob: {'fake': 0.12, 'real': 0.88}
 
-Overall Test Accuracy: 85.71% (12/14)
-```
+
+
+
+
+
+
+
+
+# Example output of Traning:
+
 2025-09-09 02:07:45.826239: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 E0000 00:00:1757383665.847112      93 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
