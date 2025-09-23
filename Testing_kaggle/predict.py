@@ -158,13 +158,43 @@ if __name__ == "__main__":
     main()
 
 
-# python predict.py --input_path "../Assets/1000_videos/test/"
+# for kaggle
+# ls /kaggle/input/1000-videos-split/1000_videos/train/fake | head -n 5
+# python predict.py --input_path "/kaggle/input/1000-videos-split/1000_videos/train/"
+
+
+# for local
+# python predict.py --input_path "../test/"
 # python predict.py --input_path "../Assets/1000_videos/test/fake/"
-# python predict.py --input_path "../Assets/1000_videos/test/real/128_22.png"
+# python predict.py --input_path "../Assets/1000_videos/validation/"
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for random necessary
 
 # ls ../../Assets/1000_videos/train/fake | head -n 5   
 # python predict.py --image "../../Assets/1000_videos/test/fake/067_025_1.png"

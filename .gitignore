@@ -6,6 +6,7 @@
 **/test
 # ML project files
 *.pkl
+*.keras
 *.h5
 *.ckpt
 *.sh
