@@ -40,7 +40,7 @@ class train():
         #                 validation_steps=15)
         model.fit(utils.image_generator(self.train_files, self.label_files, batch_size, dim), epochs = epochs, steps_per_epoch = steps,
                 validation_data =utils.image_generator(self.val_files, self.label_files, batch_size, dim),
-                validation_steps=15,
+                validation_steps=240,                       # <---- just because of i have 2400 val data and 10 in local device
                 callbacks=[model_checkpoint_callback]) # <-- THIS LINE
 
     
