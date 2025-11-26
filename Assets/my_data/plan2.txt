@@ -1,0 +1,170 @@
+This is a simpler and very common ensemble technique that merges the predictions of the models, not their features.
+
+
+
+Train Both Models: Train Model 1 (Notebook 1) and Model 2 (Notebook 2) completely, exactly as they are.
+
+Create a "Meta-Dataset":
+
+Take your validation set. For every image, get the "fake" probability from both models.
+
+Feature 1: The softmax output from Model 1 (e.g., [0.1, 0.9]).
+
+Feature 2: The predict_proba output from Model 2's KNN classifier (e.g., [0.01, 0.99]).
+
+Train a "Meta-Model":
+
+Your new training data has 2 features (the probabilities from each model) and 1 label (the true "real" or "fake" label).
+
+Train a simple classifier (like Logistic Regression or a small SVM) on this meta-dataset.
+
+Final Prediction: To detect a new video, get the probabilities from Model 1 and Model 2, then feed those two probabilities into your trained meta-model for the final, more accurate decision.
+
+
+
+
+
+
+
+My Kaggle dataset structure in test, each fake and real folder has 1200 PNGs
+
+
+
+In the train folder fake folder has 6028 PNG, and the real folder has 5605 PNG
+
+
+
+And in validation, also each fake and real folder has 1200 PNGs
+
+ex-
+
+!ls /kaggle/input/1000-videos-split/1000_videos/train/fake
+
+
+
+1000_videos/
+
+├── test/
+
+│   ├── fake/
+
+│   │   ├── 067_025_1.png
+
+│   │   ├── 067_025_2.png
+
+│   │   └── ...
+
+│   └── real/
+
+│       ├── 067_16.png
+
+│       ├── 067_17.png
+
+│       └── ...
+
+├── train/
+
+│   ├── fake/
+
+│   │   ├── 128_896_3.png
+
+│   │   ├── 128_896_4.png
+
+│   │   └── ...
+
+│   └── real/
+
+│       ├── 129_2.png
+
+│       ├── 129_3.png
+
+│       └── ...
+
+└── validation/
+
+    ├── fake/
+
+    │   ├── 000_003_0.png
+
+    │   ├── 000_003_1.png
+
+    │   └── ...
+
+    └── real/
+
+        ├── 000_0.png
+
+        ├── 000_1.png
+
+        └── ...
+
+
+
+I want a fully structured, easy-to-update code for this project to achieve 99%+ accuracy
+
+Give me modular code for my Kaggle notebook, and give me each cell code in a different canvas
+
+
+
+
+seperate canvas for each cell of notebook not in one its a mess
+
+i want cell code like "import os
+
+import glob
+
+import random
+
+import cv2
+
+import numpy as np
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+import tensorflow as tf
+
+from sklearn.neighbors import KNeighborsClassifier
+
+from sklearn.feature_selection import mutual_info_classif
+
+from sklearn.metrics import (
+
+    accuracy_score, roc_auc_score, confusion_matrix, 
+
+    classification_report, f1_score"
+
+
+
+not like ""cell_type": "code",
+
+   "execution_count": null,
+
+   "metadata": {},
+
+   "outputs": [],
+
+   "source": [
+
+    "import tensorflow as tf\n",
+
+    "import numpy as np\n",
+
+    "import pandas as pd\n",
+
+    "import os\n",
+
+    "import glob\n",
+
+    "import joblib\n",
+
+    "import random\n",
+
+    "import cv2\n",
+
+    "import warnings\n",
+
+    "\n","

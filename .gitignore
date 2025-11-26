@@ -13,3 +13,7 @@
 *conda*.sh
 datasets/
 logs/
+*FFPP/
+*test_subset/
+*.npy
+*.joblib
