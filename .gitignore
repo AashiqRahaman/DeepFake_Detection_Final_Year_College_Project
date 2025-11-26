@@ -17,3 +17,5 @@ logs/
 *test_subset/
 *.npy
 *.joblib
+*processed_dataset/
+*FFPP_processed_Aashiq/
