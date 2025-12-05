@@ -19,3 +19,4 @@ logs/
 *.joblib
 *processed_dataset/
 *FFPP_processed_Aashiq/
+*.zip

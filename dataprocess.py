@@ -5,8 +5,8 @@ from tqdm import tqdm
 
 
 # --- CONFIGURATION FOR SPLITTING ---
-SOURCE_DATA_PATH = "FFPP/"  # <--- UPDATE THIS PATH
-DEST_DATA_PATH = "processed_dataset/"
+SOURCE_DATA_PATH = "FFPP/"  # <--- UPDATE THIS PATH this is the original preprocessed data set   https://www.kaggle.com/datasets/adham7elmy/faceforencispp-extracted-frames
+DEST_DATA_PATH = "FFPP_processed_Aashiq/" 
 
 def split_dataset():
     if os.path.exists(DEST_DATA_PATH):
