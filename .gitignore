@@ -20,4 +20,5 @@ logs/
 *processed_dataset/
 *FFPP_processed_Aashiq/
 *.zip
-*.txt
+*mynote.md
+*.docx
